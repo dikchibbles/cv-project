@@ -12,24 +12,50 @@ class Education extends React.Component {
         this.saveInfo = this.saveInfo.bind(this);
     }
 
+    recreateMainPage () {
+        const containingDiv = document.querySelector('.education');
+        const form = document.createElement('form');
+        containingDiv.innerHTML = '';
+        let h2 = document.createElement('h2');
+        h2.textContent = 'Education';
+        containingDiv.append(h2);
+        form.action = '#';
+        for (const key in this.state) {
+            const input = document.createElement('input');
+            input.value = `${this.state[key]}`;
+            input.id = key;
+            form.append(input)
+        }
+        containingDiv.append(form);
+        let btn = document.createElement('button');
+        btn.textContent = 'Save';
+        btn.onclick = () => {
+            this.saveInfo()
+        }
+        containingDiv.append(btn)
+    }
+
     saveInfo () {
+        const containingDiv = document.querySelector('.education');
         const paras = [];
-        let count = 1;
         for (const key in this.state) {
             this.setState({
-                [key]: document.getElementById(key).value
+                [key]: document.getElementById(key).value.trim()
             }, () => {
                 let newP = document.createElement('p');
                 newP.textContent = this.state[key];
-                newP.classList.add(count);
                 paras.push(newP);
-                console.log(this.state)
-                const containingDiv = document.querySelector('.education');
                 containingDiv.innerHTML = '';
-                let h2 = document.createElement('h2')
+                let h2 = document.createElement('h2');
                 h2.textContent = 'Education';
                 containingDiv.append(h2);
                 paras.forEach(p => containingDiv.append(p));
+                let btn = document.createElement('button');
+                btn.textContent = 'Edit';
+                btn.onclick = () => {
+                    this.recreateMainPage()
+                }
+                containingDiv.append(btn)
             })
         }
     }
