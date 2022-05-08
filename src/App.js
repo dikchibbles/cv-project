@@ -15,10 +15,17 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <h1>CV Builder 0.1v</h1>
-        <GeneralInfo />
-        <Education />
-        <WorkingExperience />
+        <div className='navbar'>
+          <h1>CV Builder 0.1v</h1>
+        </div>
+        <div className='main'>
+          <GeneralInfo />
+          <Education />
+          <WorkingExperience />
+        </div>
+        <div className='footer'>
+          
+        </div>
       </div>
     )
   }

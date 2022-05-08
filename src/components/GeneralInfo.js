@@ -15,19 +15,16 @@ class GeneralInfo extends React.Component {
 
     recreateMainPage () {
         const containingDiv = document.querySelector('.general-info');
-        const form = document.createElement('form');
         containingDiv.innerHTML = '';
         let h2 = document.createElement('h2');
         h2.textContent = 'General Info';
         containingDiv.append(h2);
-        form.action = '#';
         for (const key in this.state) {
             const input = document.createElement('input');
             input.value = `${this.state[key]}`;
             input.id = key;
-            form.append(input)
+            containingDiv.append(input)
         }
-        containingDiv.append(form);
         let btn = document.createElement('button');
         btn.textContent = 'Save';
         btn.onclick = () => {
@@ -62,7 +59,7 @@ class GeneralInfo extends React.Component {
     }
 
     render () {
-        return (
+        return (    
             <div className="general-info">
                 <h2>General Information</h2>
                 <Input id='firstName' type="text" placeholderText={this.state.firstName} />

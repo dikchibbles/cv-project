@@ -1,5 +1,91 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
+
+h1 {
+  margin: 0;
+  color: white;
+}
+
+/* #root {
+  height: 100%;
+} */
+
+.App {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 0.5fr 5fr 0.5fr;
+}
+
+input {
+  display: block;
+}
+
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+button:hover,
+button:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+button:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}
+
+.general-info, .education, .working-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+
+
 
 
